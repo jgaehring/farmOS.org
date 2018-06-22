@@ -134,6 +134,69 @@ Beyond the load function, the client can be summarized as comprising:
         - handle asynchronous requests from the data plugin and components, and 
         - 'commits' mutations to the store at different stages of those requests
 
+## A Path Towards an Improved Architecture
+A sensible course for the future might be to decouple Vue from the client architecture entirely, so that neither the main load function nor its parameterized plugins depend on it. This would free future developers to use the framework of their chosing, or forgo frameworks entirely.
+
+Beyond merely allowing for greater flexibility with the frontend stack, generalizing the client architecture could encourage greater overall modularity within the project. Instead of one monolithic UI, the individual pages or components could be pulled in selectively when an implementation, such as farmos-native, decides to compile them with their corresponding plugins. If these UI modules corresponded to specific farmOS modules, they could even be bundled into proper Drupal modules themselves, either to extend the existing modules (eg, the offline module) or to provide an alternative interface (eg, quick forms).
+
+Another great advantage of modularizing the client in this way is to optimize the bundle size required for each pageload. Modern [code-splitting](https://webpack.js.org/guides/code-splitting/) techniques are impossible with the current architecture, because the client's Webpack configuration outputs the library as one big chunk, `dist/index.js`, bundling together all the vendor libraries, UI components and even the CSS as one file. For the time being, while our focus is restricted to the Observations module and the native implementation, this is not much of a problem, since the bundle size is still relatively small, and ultimately it will only need to be downloaded once from the Apple or Play stores. However, as the project grows, and browswer-based implementations are developed, this strategy will likely become untenable.
+
+Before splitting everything up into a bunch of smaller libraries, I think we should seriously consider moving everything back into one "monorepository". There are [some compelling arguments](https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9) for using monorepos in cases much like our own. The maintainers of the Babel JS compiler have actually extracted the tool they use for managing their own monorepo into its own library, called [Lerna](https://lernajs.io/), which has become quite popular. The Babel compiler is well known for its highly extensible nature, [being composed almost entirely of plugins](https://github.com/babel/babel/tree/master/packages#woah-whats-going-on-here). If we are in fact looking to go a similar route, Lerna seems like a well-suited and battle-tested tool for achieving that kind of extensibility. It would just make development and code sharing a lot easier, obviating the need to rely on npm-link to work on dependent libraries.
+
+### One Possible Monorepo Architecture
+If the client and native repos were combined as a monorepository, they could be restructured into 5 main subdirectories:
+
+- Core
+    - the load function
+    - essential utils & shared assets (eg, logos, simplex bootswatch)
+    - perhaps a very basic "app shell" component?
+- Drivers
+    - WebSQL
+    - HTTP
+    - Service Worker?
+- Components/Modules
+    - Observations
+    - Login 
+- Clients
+    - Native
+    - Offline Module
+- Scripts
+    - npm/Node scripts
+    - common Webpack configs
+    - shell scripts
+    - Makefiles (could these even replace the Clients directory?)
+
+#### Core
+The core library would primarily consist of an expanded load function ...
+
+#### Drivers
+
+The drivers, as I'm calling them, are more generalized versions of the Vue plugins we're currently using, such as the data plugin. I'm stealing this term and some of its conceptual underpinnings from [Cycle.js drivers](https://cycle.js.org/drivers.html), although there are some differences and I'm not proposing we use actual Cycle drivers. Fundamentally, the idea is to isolate side effects so that the main business logic of one's application can remain agnostic to the specific implementation details*. For our purposes, these side effects almost invariably represent some kind of I/O operation that is specific to the hardware or platform of the client implementation.
+
+Ideally, most drivers would handle just one external API, such as WebSQL or XMLHttpRequest, both of which are currently handled by the data plugin, but should probably be handled by separate plugins/drivers. The WebSQL driver, thus abstracted, would not have to be limited to the Cordova implementation, but could also be used for a browser-based implementation for local persisteance, if it was so desired.
+
+Other API's that could have their own drivers:
+
+- localstorage
+- IndexedDB
+- Service Worker
+- navigator.camera (for Cordova)
+- navigator.MediaDevice (for browser-based camera access)
+- navigator.geolocation (same API for Cordova & browsers)
+
+Possibly, these drivers could also abstract specific aspects of the farmOS RESTful API, such as logs and assets, or even more specific endpoints like observations and plantings. However, I'm not sure if that's going too far with the abstraction.
+
+\* = In the case of Cycle.js, this also means reducing the business logic to a single, reactive, pure function that takes a observable stream of input data and returns a stream of output data to and from the drivers, eliminating *all* side effects, including DOM manipulation, but I don't see any reason for us to be so absolutist.
+
+#### Components/Modules
+...
+
+#### Clients
+These would be platform specific implementations, such as the native client. While they wouldn't entail a lot of original code themselves, they would be the only consumers of the other libraries. Their main responsibility, as is the case for the native repo now, would be calling the load function from the core library, passing it any drivers it needed, and providing any build scripts and devDependencies necessary for the target platform, such as Cordova.
+
+#### Scripts
+This might not be necessary, but it could prove useful to provide some shared scripts that automate the development environments and build processes, since it's likely that many of the driver and component libraries will share similar build configurations. It's also possible that these scripts could supplant the need for having separate libraries for the client implementations themselves, since those implementations are mostly just concerned with scripting the build process.
+
 
 ## Development environments
 Currently, a local clone of the farmOS-native repository is required to run a 
