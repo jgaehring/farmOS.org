@@ -205,10 +205,57 @@ Below is one potential way of organizing a monorepository's directories and libr
         - build scripts for Drupal modules?
 
 #### Core
-The core library would primarily consist of an expanded load function ...
+The core library would primarily consist of an expanded load function, the app shell and the installer for the client modules. I'm increasingly inclined to borrow from Cycle.js the idea of having a `run` and a `main` function, instead of the loader as it is now (Aug '18). `run` would take `main`, a.k.a. the app shell, as an argument, as well as an object parameter with all the required drivers as its methods. It could look something like this:
+
+```js
+import Observations from './modules/Observations';
+import Grazing from './modules/Grazing';
+import makeDOMDriver from './drivers/DOM';
+import makeHTTPDriver from './drivers/HTTP';
+import makeSQLDriver from './drivers/WebSQL';
+import makeCameraDriver from './drivers/Corodova-Camera';
+import { run, app } from './core';
+
+const drivers = {
+  DOM: makeDOMDriver('#root'),
+  HTTP: makeHTTPDriver(),
+  SQL: makeSQLDriver('farmos'),
+  CAM: makeCameraDriver(),
+};
+
+const modules = [ Observations, Grazing ];
+
+run(app, drivers, modules);
+```
+
+We'd be taking two major deviations, however, from how Cycle's API functions. First, we'll not be setting up a circular dependency between ['sources' and 'sinks'](https://cycle.js.org/#-explicit-dataflow) in the same way; Cycle solves this circular dependency by using streams, which could be an interesting option to explore in the future, but for now I think it would be much simpler to avoid the problem all together. 
+
+Following from this is our second point of deviation: our drivers won't return sources and sinks the same way that Cycle.js does ... __TODO:__ So what will they return???
+
+Thirdly, we haven't yet taken into account how the installer will hook into this process, so it can load additional modules and drivers while the rest of the app shell is loaded. This gets a little tricky, and I'm still not sure how exactly this will work. Cycle.js does have something roughly equivalent in its [`setup()` function](https://cycle.js.org/api/run.html#api-setupmain-drivers), which I'm taking some inspiration from, but our `install()` would have to perform some very different tasks. Primarily it will have to run asynchronous requests against the manifests contained in the local persistance medium used by the app shell, as well as against the server's manifest, in case it has installed new modules since the manifest in local persistance was last updated. That said, it might just need to be a detail hidden in either the app shell or even the run function itself, but a possible implementation based on `setup()` could look something like this:
+
+```js
+import makeDOMDriver from './drivers/DOM';
+import makeHTTPDriver from './drivers/HTTP';
+import makeSQLDriver from './drivers/WebSQL';
+import { run, app, install } from './core';
+
+const coreDrivers = {
+  DOM: makeDOMDriver('#root'),
+  HTTP: makeHTTPDriver(),
+  SQL: makeSQLDriver('farmos'),
+};
+
+const run = install(app, coreDrivers);
+
+run();
+```
+
+Notice now that the install function is only passed the core drivers required by the app shell to query the server (`makeHTTPDriver`) and local persistance (`makeSQLDriver`), but not for accessing the camera (`makeCameraDriver`), which we can assume to be a dependency of a module like `Observations`.
+
+For other examples of how to implement the installer, we could look to how libraries like Express and Vue employ a common pattern of extending functionality with an `app.use()` method, which gets passed middleware and plugins.
 
 #### Drivers
-
 The drivers, as I'm calling them, are more generalized versions of the Vue plugins we're currently using, such as the data plugin. I'm stealing this term and some of its conceptual underpinnings from [Cycle.js drivers](https://cycle.js.org/drivers.html), although there are some differences and I'm not proposing we use actual Cycle drivers. Fundamentally, the idea is to isolate side effects so that the main business logic of one's application can remain agnostic to the specific implementation details*. For our purposes, these side effects almost invariably represent some kind of I/O operation that is specific to the hardware or platform of the client implementation.
 
 Ideally, most drivers would handle just one external API, such as WebSQL or XMLHttpRequest, both of which are currently handled by the data plugin, but should probably be handled by separate plugins/drivers. The WebSQL driver, thus abstracted, would not have to be limited to the Cordova implementation, but could also be used for a browser-based implementation for local persisteance, if it was so desired.
