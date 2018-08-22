@@ -165,6 +165,7 @@ This is a wishlist of features that would be nice to have but not necessarily re
 - static assets and vendor libraries can be more efficiently bundled and shared between modules
 - quick forms: provide interfaces for subsets of the farmOS data that don't strictly correlate to one farmOS module or another
 - easily decoupled from Vue, Bootstrap and any other frameworks
+- __...Or is this becoming a whole new framework unto itself???__
 
 ### Libraries contained in a client monorepo
 Below is one potential way of organizing a monorepository's directories and libraries:
