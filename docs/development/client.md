@@ -162,28 +162,47 @@ My personal wishlist for, or some happy byproducts of, the new architecture:
 - static assets and vendor libraries can be more efficiently bundled and shared between modules
 - quick forms: provide interfaces for subsets of the farmOS data that don't strictly correlate to one farmOS module or another
 
-### One Possible Monorepo Architecture
-If the client and native repos were combined as a monorepository, they could be restructured into 5 main subdirectories:
+### Libraries contained in a client monorepo
+Below is one potential way of organizing a monorepository's directories and libraries:
 
 - Core
-    - the load function
-    - essential utils & shared assets (eg, logos, simplex bootswatch)
-    - perhaps a very basic "app shell" component?
+    - Run function
+    - App shell (ie, `main`)
+    - Installer (for additional modules)
 - Drivers
+    - DOM
+    - HTTP (via `fetch`, not `$.http`)
     - WebSQL
-    - HTTP
-    - Service Worker?
-- Components/Modules
+    - IDB
+    - Cordova Camera
+    - Browser Camera
+    - OAuth
+- Modules
     - Observations
-    - Login 
-- Clients
-    - Native
-    - Offline Module
+    - Grazing
+    - Plantings
+    - Seedlings
+    - etc.
+- Utils
+    - logFactory
+    - time & date utils (to replace Moment)
+- Assets
+    - logos, icons & shared images
+    - main CSS, swatches, etc
+- Component library (maybe included in Assets?)
+    - Dropdown menus
+    - Forms
+    - etc
 - Scripts
-    - npm/Node scripts
-    - common Webpack configs
-    - shell scripts
-    - Makefiles (could these even replace the Clients directory?)
+    - Integration Tests
+    - Shared Scripts (by core, drivers, modules, etc)
+        - common scripts & config's
+        - Node/npm scripts
+        - Webpack config files
+    - Builds (for specific implementations)
+        - Node/npm/Webpack scripts & config
+        - shell scripts & Makefiles
+        - build scripts for Drupal modules?
 
 #### Core
 The core library would primarily consist of an expanded load function ...
