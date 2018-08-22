@@ -143,6 +143,25 @@ Another great advantage of modularizing the client in this way is to optimize th
 
 Before splitting everything up into a bunch of smaller libraries, I think we should seriously consider moving everything back into one "monorepository". There are [some compelling arguments](https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9) for using monorepos in cases much like our own. The maintainers of the Babel JS compiler have actually extracted the tool they use for managing their own monorepo into its own library, called [Lerna](https://lernajs.io/), which has become quite popular. The Babel compiler is well known for its highly extensible nature, [being composed almost entirely of plugins](https://github.com/babel/babel/tree/master/packages#woah-whats-going-on-here). If we are in fact looking to go a similar route, Lerna seems like a well-suited and battle-tested tool for achieving that kind of extensibility. It would just make development and code sharing a lot easier, obviating the need to rely on npm-link to work on dependent libraries.
 
+### Characteristics of the client architecture
+- a run or load function that takes the shell, drivers and modules as parameters
+- an app shell or main function, which provides a basic UI (eg, what gets mounted by the DOM driver)
+- drivers, which provide an interface to various hardware and browser API's, including the DOM
+- modules or plugins that add features to the shell; each provides a UI for a subset of farmOS data
+- a component library of smaller UI elements which can be shared between modules
+- an installer (client-side) and module delivery service (server-side) for transporting additional modules and drivers over a network (like the proposed native modules)
+
+### Characteristics of the client module delivery system
+- a manifest of client modules, which is generated, stored and updated by the server whenever corresponding farmOS modules are added
+- a means of querying the server's manifest for info about the installed modules and their static assets
+- a means of retrieving and caching those assets, which each module requires (specifically html, css and js files), whenever the server updates the manifest
+- the ability to render the static html and css and evaluate the JavaScript files securely from their cached locations, as seamlessly as any other app component 
+
+My personal wishlist for, or some happy byproducts of, the new architecture:
+- easily decoupled from Vue, Bootstrap and any other frameworks
+- static assets and vendor libraries can be more efficiently bundled and shared between modules
+- quick forms: provide interfaces for subsets of the farmOS data that don't strictly correlate to one farmOS module or another
+
 ### One Possible Monorepo Architecture
 If the client and native repos were combined as a monorepository, they could be restructured into 5 main subdirectories:
 
