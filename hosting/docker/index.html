@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://farmos.org/hosting/docker/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Docker - farmOS.org</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../guide/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/areas/" class="dropdown-item">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../guide/location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="../updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="../apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../development/drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="../../development/projects/" class="dropdown-item">Projects</a>
+</li>
+                                    
+<li>
+    <a href="../../development/architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../../development/update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="../../development/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../development/api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="../../development/client/" class="dropdown-item">Client</a>
+</li>
+                                    
+<li>
+    <a href="../../development/release/" class="dropdown-item">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../apikeys/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../localization/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/hosting/docker.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#hosting-farmos-with-docker" class="nav-link">Hosting farmOS with Docker</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#development-environment" class="nav-link">Development environment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#production-environment" class="nav-link">Production environment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="hosting-farmos-with-docker">Hosting farmOS with Docker<a class="headerlink" href="#hosting-farmos-with-docker" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><a href="https://www.docker.com">Docker</a> is an open-source project that automates the deployment of
+applications inside software containers. - <a href="https://en.wikipedia.org/wiki/Docker_(software)">Wikipedia</a></p>
+</blockquote>
+<p>A farmOS Docker image is available on <a href="https://hub.docker.com">Docker Hub</a> at
+<a href="https://hub.docker.com/r/farmos/farmos">https://hub.docker.com/r/farmos/farmos</a>.
+This image contains the farmOS codebase with all dependencies.</p>
+<p>It does not include the database server, but that can be set up separately as a
+standalone service, or in another Docker container.</p>
+<h2 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h2>
+<p>The farmOS Docker image can be used in both development and production
+environments. However, a separate <code>dev</code> Docker image is available for
+development purposes. See <a href="/development/docker">Developing farmOS with Docker</a> for instructions on
+setting up a development environment.</p>
+<h2 id="production-environment">Production environment<a class="headerlink" href="#production-environment" title="Permanent link">&para;</a></h2>
+<p>If you plan to host farmOS in a production environment with Docker, it is
+assumed that you have experience with Docker in production already and will make
+decisions about how to fit it into your specific server environment. An example
+<code>docker-compose.production.yml</code> file is provided in the farmOS repository's
+<code>docker</code> directory which demonstrates the basics. You can copy and rename this
+to <code>docker-compose.yml</code> as a starting point.</p>
+<p>When new versions of farmOS are released, they are tagged on Docker hub. The
+<code>latest</code> tag is also used to point to the most recent stable release tag,
+although using this to automatically update is not recommended unless you also
+have a plan for running <code>update.php</code> with each update.</p>
+<h3 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h3>
+<p>General instructions for updating to a new version of farmOS are described in
+the <a href="/hosting/updating">Updating farmOS</a> docs. It is important to familiarize yourself with that
+process before considerring how to do it with Docker.</p>
+<p>Updating farmOS hosted with Docker (assuming that you are using the example
+<code>docker-compose.production.yml</code> configuration as an example) is roughly the
+same process, with a few exceptions:</p>
+<ul>
+<li>Steps 2 and 3 (downloading and unpacking the new version) are performed
+  automatically during the Docker image build process.</li>
+<li>The farmOS codebase is built into the Docker image in <code>/var/www/html</code>, and
+  the site-specific settings and files are mounted in as a volume in
+  <code>/var/www/html/sites</code>, so they persist outside of the container.</li>
+<li>Drush is not installed in the farmOS Docker image. You can create a derivative
+  image that includes Drush, if necessary. The farmOS development image does
+  this, so you can look at <code>docker/dev/Dockerfile</code> in the farmOS repository as
+  an example.</li>
+</ul>
+<p>With <code>/var/www/html/sites</code> mounted as a volume, you can simply update to a new
+version of the farmOS Docker image itself and then run <code>update.php</code> to update
+farmOS.</p>
+<h3 id="customizing-phpini-settings">Customizing php.ini settings<a class="headerlink" href="#customizing-phpini-settings" title="Permanent link">&para;</a></h3>
+<p>It is common to need to customize certain PHP settings - such as the max upload
+size limit. This can be easily accomplished via a custom php.ini file mounted in
+the farmOS docker container.</p>
+<p><strong>docker-compose.yml</strong></p>
+<pre><code class="language-yaml">volumes:
+  - './php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini'
+</code></pre>
+<p><strong>php-custom.ini</strong></p>
+<pre><code class="language-ini">upload_max_filesize = 10M
+post_max_size = 10M
+</code></pre>
+<p><em>See the <a href="https://www.php.net/manual/en/configuration.file.php">PHP configuration file</a> documentation for more details on php.ini
+files.</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        <link rel="canonical" href="http://farmos.org/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>farmOS.org</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="extra.css" rel="stylesheet">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="guide/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="guide/app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="guide/areas/" class="dropdown-item">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="guide/logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="guide/assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="guide/assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="guide/assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="guide/assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="guide/assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="guide/assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="guide/assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="guide/location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="guide/quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="guide/inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="guide/people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="guide/import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="guide/export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="guide/quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="guide/contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="guide/contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="hosting/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="hosting/installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="hosting/updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="hosting/apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="hosting/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="hosting/localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="development/drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="development/projects/" class="dropdown-item">Projects</a>
+</li>
+                                    
+<li>
+    <a href="development/architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="development/update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="development/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="development/api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="development/client/" class="dropdown-item">Client</a>
+</li>
+                                    
+<li>
+    <a href="development/release/" class="dropdown-item">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#quick-links" class="nav-link">Quick Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#media" class="nav-link">Media</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#farmosorg-on-twitter" class="nav-link">@farmOSorg on Twitter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><img alt="farmOS" src="/img/farmOS.png" /></p>
+<p><img alt="farmOS Screenshot" src="/img/screenshot.png" /></p>
+<p><strong>
+farmOS is a web-based application for farm management, planning, and record
+keeping. It is developed by a community of farmers, developers, researchers, and
+organizations with the aim of providing a standard platform for agricultural
+data collection and management.
+</strong></p>
+<p>The farmOS server is built on top of <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>,
+<a href="https://www.drupal.org/download">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>. The <a href="/guide/app">farmOS Field Kit</a> app provides offline data
+entry in a native Android/iOS app, and as a progressive web app (PWA) at
+<a href="https://farmOS.app">https://farmOS.app</a>.</p>
+<p>Both are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>, which means they are
+<a href="https://en.wikipedia.org/wiki/Free_software">free</a> and <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
+<p>To learn how to use farmOS, refer to the <a href="/guide">User Guide</a>. For more information,
+visit the <a href="https://farmOS.discourse.group">farmOS Community Forum</a> and read the <a href="/faq">Frequently Asked Questions</a>.</p>
+<p>You can contribute to the project by <a href="/donate">making a donation</a> or <a href="/community/contribute">contributing</a> in
+other ways.</p>
+<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/community/monthly-call">Monthly call</a></li>
+<li>Forum: <a href="https://farmOS.discourse.group">https://farmOS.discourse.group</a></li>
+<li>Chat:<ul>
+<li>Matrix:<ul>
+<li><a href="https://matrix.to/#/#farmOS:matrix.org">#farmOS on Matrix.org</a> (bridged to #farmOS IRC room on Freenode)</li>
+<li><a href="https://matrix.to/#/#fiot:matrix.org">#FIot on Matrix.org</a> (Farm Internet of Things)</li>
+</ul>
+</li>
+<li>IRC: <a href="http://webchat.freenode.net/?channels=#farmOS">#farmOS on Freenode</a> (requires a registered name)</li>
+</ul>
+</li>
+<li>Code repositories:<ul>
+<li>Drupal.org: <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
+<li>GitHub: <a href="https://github.com/farmOS">https://github.com/farmOS</a></li>
+<li>Client app: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></li>
+</ul>
+</li>
+<li>Twitter: <a href="https://twitter.com/farmOSorg">@farmOSorg</a></li>
+<li>Twitter: <a href="https://twitter.com/getFarmier">@getFarmier</a></li>
+</ul>
+<h2 id="media">Media<a class="headerlink" href="#media" title="Permanent link">&para;</a></h2>
+<h3 id="motivations">Motivations<a class="headerlink" href="#motivations" title="Permanent link">&para;</a></h3>
+<p>In this video by Chris Callahan at <a href="https://www.uvm.edu/extension">UVM Extension</a>'s
+<a href="https://www.uvm.edu/extension/agriculture/agricultural_engineering">Agricultural Engineering Program</a>, Michael Stenta provides an overview of the
+motivations behind farmOS.  Why he started the project, why he uses Drupal as
+the development framework and why it is open-source. Available on YouTube:
+<a href="https://youtu.be/ATUEWrlDbWw">https://youtu.be/ATUEWrlDbWw</a></p>
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ATUEWrlDbWw?rel=0" allowfullscreen></iframe>
+</div>
+
+<h3 id="open-source-stories-the-open-farmer">Open Source Stories: The Open Farmer<a class="headerlink" href="#open-source-stories-the-open-farmer" title="Permanent link">&para;</a></h3>
+<p>farmOS was featured in the <a href="https://www.redhat.com/en/open-source-stories/farming-for-the-future/open-farmer">Red Hat Open Source Stories - Farming for the Future Series: "The Open Farmer"</a>,
+available on YouTube: <a href="https://youtu.be/6L0is9gUowY">https://youtu.be/6L0is9gUowY</a></p>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6L0is9gUowY?rel=0" allowfullscreen></iframe>
+</div>
+
+<h3 id="openteam-open-technology-ecosystem-for-agricultural-management">OpenTEAM (Open Technology Ecosystem for Agricultural Management)<a class="headerlink" href="#openteam-open-technology-ecosystem-for-agricultural-management" title="Permanent link">&para;</a></h3>
+<p>farmOS is part of <a href="https://wolfesneck.org/openteam">OpenTEAM</a>, which is summarized in a video by <a href="https://www.stonyfield.com">Stonyfield</a>,
+available on YouTube: <a href="https://youtu.be/U9YZ4H10ves">https://youtu.be/U9YZ4H10ves</a></p>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U9YZ4H10ves?rel=0" allowfullscreen></iframe>
+</div>
+
+<h3 id="godan-documentary-web-series">GODAN Documentary Web Series<a class="headerlink" href="#godan-documentary-web-series" title="Permanent link">&para;</a></h3>
+<p>farmOS was featured in the <a href="http://www.godan.info/news/open-farms-godan-documentary-web-series-episode-3">GODAN Documentary Web Series: "OPEN FARMS"</a>,
+available on YouTube: <a href="https://youtu.be/bCOqg5iH6fM">https://youtu.be/bCOqg5iH6fM</a></p>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bCOqg5iH6fM?rel=0" allowfullscreen></iframe>
+</div>
+
+<h3 id="cnbc-special">CNBC Special<a class="headerlink" href="#cnbc-special" title="Permanent link">&para;</a></h3>
+<p>farmOS was featured in a CNBC special:
+<a href="https://youtu.be/zua1y-hBcGc">CNBC: The Future Of Farming Is Utilizing Data In An Open Source Network Of Farmers</a>.</p>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zua1y-hBcGc?rel=0" allowfullscreen></iframe>
+</div>
+
+<h3 id="2017-nofa-summer-conference">2017 NOFA Summer Conference<a class="headerlink" href="#2017-nofa-summer-conference" title="Permanent link">&para;</a></h3>
+<p>Michael Stenta presented a farmOS workshop at the 2017 <a href="http://nofasummerconference.org">NOFA Summer Conference</a>.
+It covers the core features of farmOS, how to get started, where to find help,
+and how to contribute back to the project.</p>
+<p>The full workshop recording is available on YouTube:
+<a href="https://youtu.be/B8ouL9Et98o">https://youtu.be/B8ouL9Et98o</a></p>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B8ouL9Et98o?rel=0" allowfullscreen></iframe>
+</div>
+
+<h2 id="farmosorg-on-twitter">@farmOSorg on Twitter<a class="headerlink" href="#farmosorg-on-twitter" title="Permanent link">&para;</a></h2>
+<p><a class="twitter-timeline" href="https://twitter.com/farmOSorg">@farmOSorg</a></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2021-05-10 20:55:53.228193+00:00
+-->

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://farmos.org/development/release/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Release procedure - farmOS.org</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../guide/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/areas/" class="dropdown-item">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../guide/location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hosting/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="../projects/" class="dropdown-item">Projects</a>
+</li>
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="../client/" class="dropdown-item">Client</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../client/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../community/contribute/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/release.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#new-release-procedure" class="nav-link">New Release Procedure</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#preparation" class="nav-link">Preparation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#release-procedure" class="nav-link">Release procedure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#announce" class="nav-link">Announce</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="new-release-procedure">New Release Procedure<a class="headerlink" href="#new-release-procedure" title="Permanent link">&para;</a></h1>
+<p>The following documents the standard procedure for packaging a new release of
+farmOS. It is used by the <a href="/community/maintainers">maintainers</a> to ensure that all the necessary steps
+are taken.</p>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Make sure Drupal core version is up-to-date (eg: <a href="https://github.com/farmOS/farmOS/commit/d682318fa484a9aab7329bd8f9ebd338dd21dac1">farmOS/farmOS@d682318</a>).<ul>
+<li>Evaluate whether or not any core patches are still necessary, and remove
+  them if not (eg: <a href="https://github.com/farmOS/farmOS/commit/028dc18af52fb137617db6bd8df5006238ca9fb6">farmOS/farmOS@028dc18</a>).</li>
+</ul>
+</li>
+<li>Make sure all contrib modules are up-to-date (e.g. <a href="https://github.com/farmOS/farmOS/commit/d831fef9900a75050a4b18e1c8ed9599ef4d82c9">farmOS/farmOS@d831fef</a>)<ul>
+<li>If any updated contrib modules are patched in farmOS, evaluate whether or
+  not the patch is still necessary (e.g. <a href="https://github.com/farmOS/farmOS/commit/7d2e30a9d9e69baa508c3dddb4d79c68b0fc7120">farmOS/farmOS@7d2e30a</a>)</li>
+</ul>
+</li>
+<li>Ensure that the <a href="https://github.com/farmOS/farmOS/actions">7.x-1.x Build Test GitHub Action</a> is building successfully.</li>
+<li>Ensure that the <a href="https://hub.docker.com/r/farmos/farmos/builds">7.x-1.x Docker Hub image</a> is building successfully.</li>
+<li>Test all update hooks</li>
+<li>Test fresh Drush make build and installation</li>
+</ul>
+<h2 id="release-procedure">Release procedure<a class="headerlink" href="#release-procedure" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Create a "Prepare for release of farmOS [version tag]." commit that updates
+  the farmOS version references:<ul>
+<li>Update the commented <code>projects[farm][version]</code> line in <code>build-farm.make</code>.</li>
+<li>Update the commented <code>FARMOS_VERSION</code> line in <code>docker/Dockerfile</code>.</li>
+<li>Update <code>image</code> in <code>docker/docker-compose.production.yml</code>.</li>
+</ul>
+</li>
+<li>Create a release commit "farmOS [version tag]." (with period) that does the
+  following:<ul>
+<li>In <code>build-farm.make</code>:<ul>
+<li>Un-comment <code>projects[farm][version]</code>.</li>
+<li>Comment <code>projects[farm][download][*]</code> (3 lines).</li>
+</ul>
+</li>
+<li>In <code>docker/Dockerfile</code>:<ul>
+<li>Un-comment <code>FARMOS_VERSION</code> for the new tag.</li>
+<li>Comment <code>FARMOS_VERSION</code> for the development release.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tag the release commit in Git.</li>
+<li>Create a <code>git revert HEAD</code> commit that reverts the release commit (swaps the
+  commented lines back so that development version are used).</li>
+<li>Push the tag and revert commits to drupal.org and GitHub.</li>
+<li>Create a release node in drupal.org (e.g. <a href="https://www.drupal.org/project/farm/releases/7.x-1.1">7.x-1.1</a>) with release notes that
+  include:<ul>
+<li><strong>farmOS updates</strong> - Brief descriptions in HTML list form (copying commit
+  messages is a good way to do this, but very minor changes can be
+  excluded).</li>
+<li><strong>Drupal core updates</strong> - Link(s) to core release notes.</li>
+<li><strong>Contrib updates</strong> - Link(s) to project release notes.</li>
+<li><strong>Patches</strong> - List any new patches that were applied to core or contrib.</li>
+<li><strong>Docker updates</strong> - Any updates that are relevant to hosting farmOS in
+  Docker.</li>
+<li><strong>Bug fixes</strong> - Brief descriptions of bugs that were fixed.</li>
+</ul>
+</li>
+<li>Close the roadmap for this release and open a new one. Move any outstanding
+  issues to the new one.</li>
+<li>Update Drupal.org <a href="https://drupal.org/project/farm">farmOS project page</a> to point to the new recommended
+  release.</li>
+<li>Edit Github release tag (eg: <a href="https://github.com/farmOS/farmOS/releases/tag/7.x-1.1">7.x-1.1 tag</a>):<ul>
+<li>Add a link to the drupal.org release node (eg: "For full release notes,
+  see: https://www.drupal.org/project/farm/releases/7.x-1.1").</li>
+<li>Upload the packaged tar.gz file generated by drupal.org.</li>
+</ul>
+</li>
+<li>Update Docker Hub's <code>latest</code> image to point to the new release tag.</li>
+</ul>
+<h2 id="announce">Announce<a class="headerlink" href="#announce" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://farmOS.discourse.group">farmOS Forum</a> (eg:
+  <a href="https://farmos.discourse.group/t/farmos-1-2-has-been-released/50">https://farmos.discourse.group/t/farmos-1-2-has-been-released/50</a>)</li>
+<li><a href="https://twitter.com/farmOSorg">Twitter @farmOSorg</a> (eg:
+  <a href="https://twitter.com/farmOSorg/status/1118981883101052929">https://twitter.com/farmOSorg/status/1118981883101052929</a>)</li>
+<li><a href="[https://opencollective.com/farmOS">OpenCollective farmOS</a> (eg:
+  <a href="https://opencollective.com/farmos/updates/farmos-1-1-has-been-released">https://opencollective.com/farmos/updates/farmos-1-1-has-been-released</a>)</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

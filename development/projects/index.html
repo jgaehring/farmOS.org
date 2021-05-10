@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://farmos.org/development/projects/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Projects - farmOS.org</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../guide/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/areas/" class="dropdown-item">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../guide/location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hosting/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Projects</a>
+</li>
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="../client/" class="dropdown-item">Client</a>
+</li>
+                                    
+<li>
+    <a href="../release/" class="dropdown-item">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../drupal/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../architecture/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/projects.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#projects" class="nav-link">Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#distribution" class="nav-link">Distribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#modules" class="nav-link">Modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#theme" class="nav-link">Theme</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#external-tools" class="nav-link">External Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h1>
+<p><a href="http://farmos.org">farmOS</a> is built as a set of separate but inter-dependent <a href="https://drupal.org">Drupal</a> projects.</p>
+<p>Drupal is a modular system, and farmOS follows in those footsteps by providing
+all of it's features as singularly-focused modules on top of Drupal core.</p>
+<p>All of these various modules, their dependencies, third-party libraries, and
+the official farmOS Drupal theme are packaged together into a
+<a href="https://drupal.org/project/farm">farm-focused Drupal distribution</a> that is collectively referred to as "farmOS".</p>
+<p>Distributions of Drupal are roughly analogous to distributions of Linux. They
+serve to collect various code and configuration together in an intentional way.
+More information can be found in the <a href="https://www.drupal.org/documentation/build/distributions">Drupal distribution documentation</a>.</p>
+<p>To learn more about Drupal in general, refer to the <a href="https://www.drupal.org/documentation">Drupal documentation</a>.</p>
+<h2 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://drupal.org/project/farm">farmOS Distribution</a></li>
+</ul>
+<p>The purpose of the farmOS distribution is to collect all the modules in one
+package, along with some default configuration, theming, etc. Drupal.org has an
+automated packaging system, so if you are getting started with farmOS,
+downloading and installing a packaged release is the recommended approach. See
+<a href="/hosting/installing">installing farmOS</a> for more information.</p>
+<p>The farmOS repository itself does not include a fully-built codebase. So if you
+clone it from drupal.org or Github, you will either need to build it yourself
+with <a href="http://www.drush.org">Drush</a> or use <a href="/development/docker">Docker</a>.</p>
+<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<h3 id="included-in-farmos">Included in farmOS<a class="headerlink" href="#included-in-farmos" title="Permanent link">&para;</a></h3>
+<p>These modules are included directly in the farmOS distribution repository:</p>
+<ul>
+<li><strong>Farm Access</strong> - Provides mechanisms for managing farmOS user access
+  permissions.</li>
+<li><strong>Farm Access Roles</strong> - Provides default roles: Manager, Worker, Viewer.</li>
+<li><strong>Farm API</strong> - Extends the RESTful Web Services module to provide
+  farmOS-specific APIs.</li>
+<li><strong>Farm Area</strong> - Features for managing farm areas.</li>
+<li><strong>Farm Area Generator</strong> - A tool for automatically generating areas. Requires
+  GEOS library.</li>
+<li><strong>Farm Area Import</strong> - A tool for importing multiple area geometries from a
+  single KML file.</li>
+<li><strong>Farm Area Types</strong> - Provides some default area types.</li>
+<li><strong>Farm Asset</strong> - A farm asset entity type.</li>
+<li><strong>Farm Asset Children</strong> - Provides child asset relationships.</li>
+<li><strong>Farm Asset Property</strong> - Provides the ability to assign arbitrary (key-value
+  pairs) properties to assets.</li>
+<li><strong>Farm Asset Views</strong> - Default Views of farm assets.</li>
+<li><strong>Farm Calendar</strong> - Provides a calendar view of farmOS logs.</li>
+<li><strong>Farm Client</strong> - Integrates the farmOS server and client.</li>
+<li><strong>Farm Constraint</strong> - Provides a framework for managing foreign key
+  constraints between farmOS entities.</li>
+<li><strong>Farm Crop</strong> - Features for managing farm crops.</li>
+<li><strong>Farm Crop Area Types</strong> - Provides default area types for crop management:
+  Bed, Greenhouse.</li>
+<li><strong>Farm Dashboard</strong> - Provides a farmOS dashboard at /farm.</li>
+<li><strong>Farm Data Field</strong> - Adds an arbitrary data field to logs and assets.</li>
+<li><strong>Farm Equipment</strong> - Features for managing farm equipment.</li>
+<li><strong>Farm Equipment Field</strong> - Adds an "Equipment used" field to logs.</li>
+<li><strong>Farm Fields</strong> - Provides common base field definitions for farmOS entity
+  types.</li>
+<li><strong>Farm Fields Autocomplete</strong> - Adds autocomplete to text fields.</li>
+<li><strong>Farm Fields Dynamic</strong> - Provides the ability for modules to define fields
+  dynamically.</li>
+<li><strong>Farm Flags</strong> - Provides a general purpose record flagging system.</li>
+<li><strong>Farm Group</strong> - Features for managing group assets like herds, flocks, etc.</li>
+<li><strong>Farm Help</strong> - Help pages for farmOS.</li>
+<li><strong>Farm Import</strong> - Provides a framework for creating CSV importers in farmOS.</li>
+<li><strong>Farm Inventory</strong> - Provides inventory management functionality for farm
+  assets.</li>
+<li><strong>Farm Ledger</strong> - Provides sale and purchase log types.</li>
+<li><strong>Farm Livestock</strong> - Features for managing farm livestock.</li>
+<li><strong>Farm Livestock Area Types</strong> - Provides default area types for livestock
+  management: Paddock.</li>
+<li><strong>Farm Livestock Weight</strong> - Features for tracking weight of animals with
+  observation logs.</li>
+<li><strong>Farm Log</strong> - Provides integration with the Log module.</li>
+<li><strong>Farm Log: Activity</strong> - Provides an activity log type.</li>
+<li><strong>Farm Log: Harvest</strong> - Provides a harvest log type.</li>
+<li><strong>Farm Log: Input</strong> - Provides an input log type.</li>
+<li><strong>Farm Log: Observation</strong> - Provides an observation log type</li>
+<li><strong>Farm Map</strong> - Provides OpenLayers configuration for farm maps.</li>
+<li><strong>Farm Map KML</strong> - Provides KML features for farm maps.</li>
+<li><strong>Farm MapKnitter</strong> - Provides integration with Public Lab's MapKnitter.org.</li>
+<li><strong>Farm Menu</strong> - Provides a menu for farm pages.</li>
+<li><strong>Farm Metrics</strong> - Allow modules to define high level metrics.</li>
+<li><strong>Farm Movement</strong> - Provides movement field and related asset location code.</li>
+<li><strong>Farm People</strong> - A view of people associated with the farm.</li>
+<li><strong>Farm Plan</strong> - A farm plan entity type.</li>
+<li><strong>Farm Plan Consideration</strong> - Provides features for managing considerations
+  within a farm plan.</li>
+<li><strong>Farm Plan Map</strong> - Adds a map of areas and assets in a plan.</li>
+<li><strong>Farm Quantity</strong> - Provides a framework for dealing with quantities.</li>
+<li><strong>Farm Quantity Log</strong> - Provides helper functions for querying logs with
+  quantity data.</li>
+<li><strong>Farm Quantity Report</strong> - Generate reports of quantity measurements.</li>
+<li><strong>Farm Quick</strong> - Provides a framework for quick forms in farmOS.</li>
+<li><strong>Farm Report</strong> - Features for viewing reports.</li>
+<li><strong>Farm Season</strong> -   Provides a taxonomy and fields for organizing assets and
+  logs by season.</li>
+<li><strong>Farm Sensor</strong> - Features for managing farm sensors.</li>
+<li><strong>Farm Sensor: Listener</strong> - ...</li>
+<li><strong>Farm Soil</strong> - Provides features for soil health management.</li>
+<li><strong>Farm Soil NRCS</strong> - Provides integration with NRCS Soil Survey data.</li>
+<li><strong>Farm Soil Test</strong> - .Features for managing soil tests.</li>
+<li><strong>Farm Soil: Compost</strong> - Features for managing compost.</li>
+<li><strong>Farm Term</strong> - Provides helper functions for working with taxonomy terms.</li>
+<li><strong>Farm UI</strong> - Provides standardized user interface support to farmOS modules.</li>
+<li><strong>Farm Water</strong> - Provides features for water management.</li>
+<li><strong>Farm Water Test</strong> - Features for managing water tests.</li>
+</ul>
+<h3 id="other-modules">Other modules<a class="headerlink" href="#other-modules" title="Permanent link">&para;</a></h3>
+<p>These modules aren't included with the farmOS distribution, but they can be
+added to extend your farmOS functionality:</p>
+<ul>
+<li><strong><a href="https://github.com/farmOS/farm_bee">Farm Bee</a></strong> - Features for beekeeping.</li>
+<li><strong><a href="https://github.com/farmOS/farm_biodynamic">Farm Biodynamic</a></strong> - Provides a
+  flag for marking records as "Biodynamic" in farmOS.</li>
+<li><strong><a href="https://github.com/farmOS/farm_eggs">Farm Eggs</a></strong> - Provides a simple UI
+  for creating egg harvest logs.</li>
+<li><strong><a href="https://github.com/farmOS/farm_forest">Farm Forest</a></strong> - Forest management
+  module for farmOS.</li>
+<li><strong><a href="https://github.com/farmOS/farm_grazing">Farm Grazing</a></strong> - Provides a simple UI
+  for creating egg harvest logs.</li>
+<li><strong><a href="https://github.com/farmOS/farm_maple">Farm Maple</a></strong> - Features for
+  management of maple tapping and production.</li>
+<li><strong><a href="https://github.com/bonushenricus/farm_map_emrom">Farm Map: Emilia-Romagna</a></strong> -
+  Emilia-Romagna map layers for farmOS maps.</li>
+<li><strong><a href="https://github.com/Sidiox/farm_map_pdok">Farm Map: PDOK</a></strong> -
+  Dutch PDOK map layers for farmOS maps.</li>
+<li><strong><a href="https://github.com/rkioski/farm_map_fi">Farm Map: Finland</a></strong> - Finnish map
+  layers for farmOS maps.</li>
+<li><strong><a href="https://github.com/farmOS/farm_map_no">Farm Map: Norway</a></strong> - Norwegian map
+  layers for farmOS maps.</li>
+<li><strong><a href="https://github.com/symbioquine/farm_map_sjc">Farm Map: SJC</a></strong> - San Juan
+  County, WA, USA map layers for farmOS maps.</li>
+<li><strong><a href="https://github.com/farmOS/farm_mushroom">Farm Mushroom</a></strong> - Features for
+  managing mushroom production.</li>
+<li><strong><a href="https://github.com/almostengr/farmosnws">FarmOS NWS</a></strong> - Imports data
+  from the National Weather Service into Drupal for use by farmOS.</li>
+<li><strong><a href="https://github.com/farmOS/farm_nutrient">Farm Nutrient</a></strong> - Nutrient
+  management planning module for farmOS.</li>
+<li><strong><a href="https://github.com/farmOS/farm_organic">Farm Organic</a></strong> - Provides flags
+  for marking records as "Organic" and "Not Organic" in farmOS.</li>
+<li><strong><a href="https://github.com/farmOS/farm_produce_safety">Farm Produce Safety</a></strong> -
+  A produce safety record keeping module for farmOS.</li>
+<li><strong><a href="https://github.com/mstenta/farm_sensor_atmospi">Farm Sensor: Atmospi</a></strong> -
+  Integrates farmOS and <a href="https://github.com/mstenta/atmospi">Atmospi</a> sensors.</li>
+<li><strong><a href="https://github.com/symbioquine/farmOS_wfs">FarmOS WFS</a></strong> -
+  Exposes FarmOS areas as a <a href="https://www.opengeospatial.org/standards/wfs">Web Feature Service (WFS)</a> enabling bi-directional
+  access through full-fledged GIS tools like <a href="https://qgis.org/">Quantum GIS</a>.</li>
+</ul>
+<p>For more information and documentation about these modules, see
+<a href="/guide/contrib">farmOS community modules</a>.</p>
+<h2 id="theme">Theme<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h2>
+<p>The official farmOS theme ("Farm Theme") that is included with farmOS is a
+Drupal theme based off of <a href="https://drupal.org/project/bootstrap">Bootstrap</a>.</p>
+<h2 id="external-tools">External Tools<a class="headerlink" href="#external-tools" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="https://github.com/komatek21/Ansible_FarmOS">Ansible farmOS</a></strong> - Ansible playbooks for provisioning a farmOS server on
+  Debian 9.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://farmos.org/development/client/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Client - farmOS.org</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../guide/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/areas/" class="dropdown-item">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="../../guide/assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../guide/location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="../../guide/quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../guide/contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="../../guide/contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hosting/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="../projects/" class="dropdown-item">Projects</a>
+</li>
+                                    
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Client</a>
+</li>
+                                    
+<li>
+    <a href="../release/" class="dropdown-item">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../api/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../release/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/client.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#farmos-client" class="nav-link">farmOS Client</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#users-guide" class="nav-link">User's Guide</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#architecture" class="nav-link">Architecture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-environments" class="nav-link">Development environments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#web-build-process" class="nav-link">Web build process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#native-build-process" class="nav-link">Native build process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="farmos-client">farmOS Client<a class="headerlink" href="#farmos-client" title="Permanent link">&para;</a></h1>
+<p>Work has begun on a simplified farmOS app that works offline in both browser
+and native app form. It is installable on Android and iOS devices. The
+goal is to create a fast and focused client app for day-to-day and in-the-field
+record keeping that stores data locally for offline use, and syncs back to a
+farmOS server when internet access is available.</p>
+<p>The application consists of the main client, which provides the UI and core
+features, as well as native plugins, which provide specific support for native
+functionality, like the ability to persist data and access the camera.</p>
+<p>The source code can be found here: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></p>
+<p><strong>This documentation is not complete. It is intended only for informational
+purposes at this time.</strong></p>
+<h2 id="users-guide">User's Guide<a class="headerlink" href="#users-guide" title="Permanent link">&para;</a></h2>
+<p>Please see the <a href="/guide/app">User's Guide</a> for more information on how to install and use
+the client on your devices.</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>The client is built with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. Initially, the client 
+and its native implementation were maintained as separate libraries. This was 
+done with the aim of being able to isolate native functionality in <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a> 
+that could be swapped out for browser-based plugins. This may not be strictly 
+necessary in the future, but it does at least make for good separation of 
+concerns.</p>
+<h2 id="development-environments">Development environments<a class="headerlink" href="#development-environments" title="Permanent link">&para;</a></h2>
+<p>The first thing of course is to clone the client repo from GitHub, and install
+the npm dependencies:</p>
+<pre><code class="language-bash">$ git clone https://github.com/farmOS/farmOS-client.git
+$ cd farmOS-client
+$ npm install
+</code></pre>
+<p>Note that the default branch for this repository is <code>develop</code>, not <code>master</code>;
+<code>develop</code> should represent the most current set of complete features that
+are only awaiting further testing before release. You should branch or fork
+off <code>develop</code> and submit pull requests to be merged back into it. The 
+<code>deploy</code> branch respresents the latest tagged release.</p>
+<h3 id="browser">Browser<a class="headerlink" href="#browser" title="Permanent link">&para;</a></h3>
+<p>The browser-based development environment can be started by running the
+following command from the project root:</p>
+<pre><code class="language-bash">$ npm start
+</code></pre>
+<p>This will start the Webpack devServer, which will compile a development build
+and serve it from <a href="http://localhost:8080/">http://localhost:8080/</a>. Changes saved to the files in your
+local repo will be hot reloaded automatically while the devServer is running.</p>
+<h4 id="proxying-a-farmos-docker-container">Proxying a farmOS Docker container<a class="headerlink" href="#proxying-a-farmos-docker-container" title="Permanent link">&para;</a></h4>
+<p>By default, when the Webpack devServer starts, it will set up a proxy service,
+which will route all AJAX requests and responses through <code>http://localhost:80</code>,
+in order to prevent CORS errors. This is assumed to be the address of a local
+farmOS development server running in a Docker container. This is probably the
+easiest way to get a development backend up and running, so if you don't already
+have a sever you can use for testing, see the <a href="/development/docker/">full instructions for setting up
+a farmOS Docker container</a>.</p>
+<p>If you wish to proxy an address other than <code>http://localhost:80</code>, you'll need to
+change the proxy settings in <code>farmOS-native/config/index.js</code>. Set
+<code>dev.proxy.target</code> to the address and port of your farmOS testing server.
+Restart the devServer and it should now be proxying your new address. It may
+also be necessary to add new endpoints to the <code>dev.proxy.context</code> array as new
+features are developed and new endpoints on the farmOS server need to be
+reached. For more information, see the <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">Webpack documentation on configuring the
+proxy middleware</a>.</p>
+<p>You will also need to configure the server to enable CORS requests. Go to
+<a href="http://localhost/admin/config/farm/access">http://localhost/admin/config/farm/access</a> and enter <code>http://localhost:8080</code>
+as the Access-Control-Allow-Origin.</p>
+<p>Finally, when logging in to the client from the browser, simply leave the URL
+field blank. The devServer will then interpret all requests as relative links
+and proxy them accordingly. For some reason login can sometimes fail on the
+first attempt, but should succeed on all subsequent attempts.</p>
+<h3 id="platform-sdks">Platform SDK's<a class="headerlink" href="#platform-sdks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging">Cordova docs on running the emulator and debugger in Android Studio</a></li>
+<li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging">Cordova docs on running the emulator and debugger in XCode</a></li>
+</ul>
+<h2 id="web-build-process">Web build process<a class="headerlink" href="#web-build-process" title="Permanent link">&para;</a></h2>
+<p>To build the client for the web, you just need to run the build script:</p>
+<pre><code class="language-bash">$ npm run build:web
+</code></pre>
+<p>The output of this script will be found in the <code>dist</code> directory and can be
+deployed using web server.</p>
+<h2 id="native-build-process">Native build process<a class="headerlink" href="#native-build-process" title="Permanent link">&para;</a></h2>
+<p>The process for building the native applications for iOS and Android can be
+broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and
+JavaScript modules into their final form that will run in <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/webviews/">WebView</a>; secondly,
+Cordova, with some help from the Android and iOS SDK's (Android Studio &amp; XCode,
+respectively), builds the full-blown native packages (.apk and .ipa files,
+respectively).</p>
+<p>To build from source, you'll need to clone the client repository from
+GitHub:</p>
+<pre><code class="language-bash">$ git clone https://github.com/farmOS/farmOS-client.git
+</code></pre>
+<p>Bundling the web assets with Webpack is fairly straight-forward. <a href="https://nodejs.org">Node</a>
+(v.6.0.0 or higher) and npm (v.3.0.0 or higher) are the only system
+requirements. Once Node is installed, you can install the necessary JavaScript
+dependencies with npm, which is automatically included with Node. The npm
+script <code>build:native</code> can then run Webpack to bundle the assets. All this can
+be done by running the following two commands from the project's root
+directory:</p>
+<pre><code class="language-bash">$ npm install
+$ npm run build:native
+</code></pre>
+<p>This will generate all the necessary files within the <code>www</code> directory, which
+Webpack will create if it doesn't already exist. Do not alter these files
+directly. They are optimized for WebView, which is basically a browser that
+Cordova installs and runs inside the native application itself to render all
+the HTML, CSS and JavaScript source files. The same files are used by both iOS
+and Android implementations</p>
+<p>All the web assets are now ready for building the final native packages. Both
+platforms will require installing Cordova globally, via npm:</p>
+<pre><code class="language-bash">$ npm install -g cordova
+</code></pre>
+<p>This, however, is where the process diverges into separate iOS and Android
+builds. This next stage will probably comprise the most system configuration,
+too, since it requires installing each platform's SDK (Software Development
+Kit), if they aren't installed already. Of course, if you only intend to build
+for one platform, you only need to install that platform's SDK and
+corresponding system requirements; building for both platforms will require
+installing both SDK's.</p>
+<h3 id="android-build">Android Build<a class="headerlink" href="#android-build" title="Permanent link">&para;</a></h3>
+<p>To configure your system to build the Android app, follow Cordova's
+<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html">Android Platform Guide</a>" and the <a href="https://developer.android.com/studio/install">Android Studio installation guide</a>. This
+will differ depending on your development machine's operating system, but Mac,
+Windows and Linux are all supported.</p>
+<p><strong>System Requirements:</strong></p>
+<ul>
+<li>Java 8</li>
+<li>Android Studio</li>
+<li>Gradle</li>
+</ul>
+<p>Note that Android Studio recommends the official Oracle JDK for Java 8; using
+OpenJDK may cause errors. Also make sure to follow Cordova's instructions for
+setting up your system's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#setting-environment-variables">environment variables</a> and installing the
+<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#adding-sdk-packages">SDK packages</a> for the Android versions the app will target. As of May 2018,
+the latest version of Android that Cordova seems to support is 7.1.1, at API
+Level 25.</p>
+<p>Once Android Studio is installed and configured, make sure Android has been
+added to Cordova's list of platforms, then you're try out the build command:</p>
+<pre><code class="language-bash">$ cordova platform add android
+$ cordova build android
+</code></pre>
+<p>By default, the <code>build</code> command will produce a debugging APK (equivalent to
+running <code>cordova build android --debug</code>). If you want to build a final release
+version, you'll need to add the <code>--release</code> flag, but you'll also need to use
+your keys for signing the APK (see "<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#signing-an-app">Signing an App</a>" in the Cordova docs for
+more details). For reference, the official farmOS Field Kit app is built using
+the following flags:</p>
+<pre><code class="language-bash">cordova build android --release -- \
+--keystore=/path/to//your-key.keystore \
+--storePassword=xxxxxxxx \
+--alias=yyyy --password=zzzzzzzz
+</code></pre>
+<p>Both the debug and release APK's can then be found at
+<code>path/to/farmOS-client/platforms/android/app/build/outputs/apk</code> after building.</p>
+<h3 id="ios-build">iOS Build<a class="headerlink" href="#ios-build" title="Permanent link">&para;</a></h3>
+<p>Only available on Apple OS X. Windows and Linux are not supported. For some
+workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-ios-app-on-linux-in-2017/">Developing an iOS App on Linux</a>"</p>
+<p>You'll need Xcode installed in order to run the Cordova build commands. See
+Cordova's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html">iOS Platform Guide</a> for more info.</p>
+<p>Once you have the environment set up, you'll want to add the iOS platform with
+Cordova (we recommend version 5.1.1 or higher), then you can run a debugging
+build:</p>
+<pre><code class="language-bash">cordova platform add ios@5.1.1
+cordova build ios
+</code></pre>
+<p>Using the <code>build</code> command without the <code>--release</code> flag triggers a debug build
+by default. To build a signed app for the App Store, you'll need to follow
+Cordova's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#signing-an-app">app signing guidelines</a>, but for reference, we use the following
+command and flags:</p>
+<pre><code class="language-bash">cordova build ios --release --device \
+--codeSignIdentity=&quot;iPhone Distribution&quot; \
+--developmentTeam=&quot;ABCD1234&quot; \
+--packageType=&quot;app-store&quot; \
+--provisioningProfile=&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;
+</code></pre>
+<p>Signed .ipa files will be found at <code>path/to/farmOS-client/platforms/ios/build/device/</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

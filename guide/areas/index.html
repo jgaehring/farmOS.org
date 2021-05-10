@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://farmos.org/guide/areas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mapping your farm - farmOS.org</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-1', 'farmos.org');
+            ga('send', 'pageview');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../app/" class="dropdown-item">Field Kit</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Mapping your farm</a>
+</li>
+                                    
+<li>
+    <a href="../logs/" class="dropdown-item">Logging events</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Managing assets</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../assets/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../assets/plantings/" class="dropdown-item">Plantings</a>
+</li>
+            
+<li>
+    <a href="../assets/animals/" class="dropdown-item">Animals</a>
+</li>
+            
+<li>
+    <a href="../assets/equipment/" class="dropdown-item">Equipment</a>
+</li>
+            
+<li>
+    <a href="../assets/compost/" class="dropdown-item">Compost</a>
+</li>
+            
+<li>
+    <a href="../assets/sensors/" class="dropdown-item">Sensors</a>
+</li>
+            
+<li>
+    <a href="../assets/groups/" class="dropdown-item">Groups</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../location/" class="dropdown-item">Movements and location</a>
+</li>
+                                    
+<li>
+    <a href="../quantity/" class="dropdown-item">Quantity measurements</a>
+</li>
+                                    
+<li>
+    <a href="../inventory/" class="dropdown-item">Inventory tracking</a>
+</li>
+                                    
+<li>
+    <a href="../people/" class="dropdown-item">People</a>
+</li>
+                                    
+<li>
+    <a href="../import/" class="dropdown-item">Import</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
+    <a href="../quick/" class="dropdown-item">Quick forms</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Community modules</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../contrib/" class="dropdown-item">Introduction</a>
+</li>
+            
+<li>
+    <a href="../contrib/eggs/" class="dropdown-item">Eggs</a>
+</li>
+            
+<li>
+    <a href="../contrib/forest/" class="dropdown-item">Forest</a>
+</li>
+            
+<li>
+    <a href="../contrib/grazing/" class="dropdown-item">Grazing</a>
+</li>
+            
+<li>
+    <a href="../contrib/nutrient/" class="dropdown-item">Nutrient</a>
+</li>
+            
+<li>
+    <a href="../contrib/organic/" class="dropdown-item">Organic</a>
+</li>
+            
+<li>
+    <a href="../contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
+</li>
+            
+<li>
+    <a href="../contrib/quick-weight/" class="dropdown-item">Quick Weight Form</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hosting/" class="dropdown-item">Getting started</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/installing/" class="dropdown-item">Installing</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/updating/" class="dropdown-item">Updating</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/apikeys/" class="dropdown-item">API Keys</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../hosting/localization/" class="dropdown-item">Localization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../development/drupal/" class="dropdown-item">Drupal</a>
+</li>
+                                    
+<li>
+    <a href="../../development/projects/" class="dropdown-item">Projects</a>
+</li>
+                                    
+<li>
+    <a href="../../development/architecture/" class="dropdown-item">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../../development/update-safety/" class="dropdown-item">Update Safety</a>
+</li>
+                                    
+<li>
+    <a href="../../development/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../development/api/" class="dropdown-item">API</a>
+</li>
+                                    
+<li>
+    <a href="../../development/client/" class="dropdown-item">Client</a>
+</li>
+                                    
+<li>
+    <a href="../../development/release/" class="dropdown-item">Release procedure</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
+</li>
+                                    
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
+</li>
+                                    
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
+</li>
+                                    
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
+</li>
+                                    
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
+</li>
+                                    
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
+</li>
+                                    
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
+</li>
+                                    
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
+</li>
+                                    
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../app/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../logs/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/guide/areas.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#mapping-your-farm" class="nav-link">Mapping your farm</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#using-geometry-fields" class="nav-link">Using geometry fields</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#remember-to-save" class="nav-link">Remember to save!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#organizing-areas-hierarchically" class="nav-link">Organizing areas hierarchically</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#generate-beds" class="nav-link">Generate beds</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#use-the-snapping-grid" class="nav-link">Use the Snapping Grid</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mapping-your-farm">Mapping your farm<a class="headerlink" href="#mapping-your-farm" title="Permanent link">&para;</a></h1>
+<p>farmOS gives you the ability to organize all of the various places on (and off)
+your farm. These places are referred to as "Areas" in farmOS, and they can be
+referenced when you are <a href="/guide/logs">logging events</a>. They are specifically useful in
+movement logs for <a href="/guide/location">setting location of assets</a>.</p>
+<p>To create an area, go to the Farm Dashboard and click the "Add an area" button.
+This will take you to a form for defining an area. Here is a quick overview of
+the fields available to you when you are describing an area:</p>
+<ul>
+<li><strong>Name</strong> - The first (and only) thing an area needs is a name. All the other
+  fields are optional.</li>
+<li><strong>Area type</strong> - farmOS uses the concept of "area type" to organize and
+  color-code areas on a map. Some of the types available include: Property,
+  Building, Field, and Water. The area type field is not required, but if you do
+  not use it then the area will not be displayed on the main map.</li>
+<li><strong>Geometry</strong> - The Geometry field lets you draw your area on a map, using
+  points, lines, and polygons (see a more detailed description below).</li>
+<li><strong>Description</strong> - This is a simple text tield that you can use to describe
+  each area in further detail. It can be used to take notes, but it is
+  recommended that any activities be recorded using logs instead, because they
+  have a timestamp associated with them.</li>
+<li><strong>Photo(s)</strong> - This field lets you attach photos to your area.</li>
+<li><strong>Files</strong> - This field lets you attach files to your area. You can also use
+  this to upload KML files and automatically import them into the Geometry field
+  above (see more information below).</li>
+<li><strong>Relations</strong> - The "Parent" and "Weight" fields let you define a hierarchy
+  and order to your areas. You can edit these fields individually on each area,
+  or you can use the drag-and-drop hierarchy editor - which is much easier for
+  moving a lot of areas around at once (more details below).</li>
+<li><strong>Flags</strong> - Flags can be added to areas (as well as assets and logs) for
+  easier searching/filtering. Some flags are provided by default (eg:
+  "Prioity", "Needs Review", "Monitor"), and modules can provide additional
+  flags (eg: "Organic" and "Not Organic" provided by the [Organic module]).</li>
+</ul>
+<h2 id="using-geometry-fields">Using geometry fields<a class="headerlink" href="#using-geometry-fields" title="Permanent link">&para;</a></h2>
+<p>Here are some common things you will do with the geometry fields in farmOS:</p>
+<h3 id="zooming">Zooming<a class="headerlink" href="#zooming" title="Permanent link">&para;</a></h3>
+<p>There are three ways to zoom in/out:</p>
+<ol>
+<li>On touch screens, you can "pinch zoom" using two fingers.</li>
+<li>With a computer mouse, you can use the scroll wheel to zoom in/out.</li>
+<li>The plus (+) and minus (+) buttons in the top left of the map control zoom.</li>
+</ol>
+<h3 id="geolocating">Geolocating<a class="headerlink" href="#geolocating" title="Permanent link">&para;</a></h3>
+<p>A "Geolocate" button is available in the top left of the map. This will use your
+device's GPS (if available) and/or IP-based geolocation service to try to find
+your current location and center the map on that point. While geolocation is
+turned on, your position will automatically update as you move around. In
+addition to the point, a circle will also be displayed around the point with an
+accuracy radius to tell you how confident the geolocated position is.</p>
+<h3 id="address-search">Address search<a class="headerlink" href="#address-search" title="Permanent link">&para;</a></h3>
+<p>A search button is available in the left of the map (under the zoom buttons) for
+performing an address search. As you type into the search box, matching
+addresses will be displayed in a dropdown. Select the address that you want from
+that list and the map will be automatically re-centered on that location.</p>
+<h3 id="drawing">Drawing<a class="headerlink" href="#drawing" title="Permanent link">&para;</a></h3>
+<p>There are four buttons for drawing shapes:</p>
+<ol>
+<li><strong>Point</strong>: Click on the map to create a point.</li>
+<li><strong>Line</strong>: Create a series of line segments by clicking points on the map, and
+   double-clicking when you're done. You can also hold shift to draw freehand.</li>
+<li><strong>Circle</strong>: Create a circle by clicking where you want the center to be,
+   dragging the circle outward to expand it, and clicking again to finish.</li>
+<li><strong>Polygon</strong>: A polygon works the same as a line, except it will create a
+   closed shape at the end, whereas a line will not be filled in.</li>
+</ol>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/mapping-areas.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h3 id="modifying">Modifying<a class="headerlink" href="#modifying" title="Permanent link">&para;</a></h3>
+<p>There are three buttons for modifying shapes:</p>
+<ol>
+<li><strong>Modify</strong>: Click the modify button, and then click a shape to select it. You
+   can click and drag any of the vertices to modify the overall shape.</li>
+<li><strong>Move</strong>: Click the move button, and then click a shape to select it. Then
+   click and drag the shape to move it to a different position.</li>
+<li><strong>Delete</strong>: The delete button will clear any selected shapes from the map. If
+   you accidentally click this, refresh the page WITHOUT saving, and you will
+   revert to the previously saved shapes. Note that this will also revert any
+   other changes to your area that you haven't saved.</li>
+</ol>
+<h3 id="importing-a-kml-file">Importing a KML file<a class="headerlink" href="#importing-a-kml-file" title="Permanent link">&para;</a></h3>
+<p>KML files are special shape files that define a geometry on a map. They can be
+created with various GIS/mapping software. If you already have your farm mapped
+in another software (like <a href="https://www.google.com/earth">Google Earth</a>), you can export KML files for each
+area and then import them into farmOS's geometry fields. Alternatively, you can
+use the <em>Farm Area Import</em> module to import a single KML file and break it up
+into multiple areas.</p>
+<p>To import a KML file of an individual area, follow these steps:</p>
+<ol>
+<li>Create a new area (or edit an existing one).</li>
+<li>Scroll down to the Files field and upload your KML file.</li>
+<li>Scroll up to the Geometry field, and just below the map you will see a button
+   labeled "Find using Files field". If you uploaded a valid KML file, you will
+   see the shape(s) appear in the map.</li>
+</ol>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/kml-import.mp4" type="video/mp4">
+  </video>
+</div>
+
+<p>To import a KML file with multiple areas, follow these steps:</p>
+<ol>
+<li>Enable the <em>Farm Area Import</em> module (if it isn't already).</li>
+<li>Click "Areas" in the main menu and then click the "Import" tab.</li>
+<li>Copy and paste the contents of your KML file into the text area, and click
+   "Parse".</li>
+<li>If geometries are found in the KML file, a fieldset will be shown for each
+   of them, letting you customize the area name, type, and whether or not it
+   should be imported.</li>
+<li>At the bottom of the form, there is an option to create a new area that will
+   contain all the imported areas. It is a good idea to use this so that you
+   can easily review the areas that were imported, without having them mixed in
+   with your existing areas right away. If you find that the import didn't work
+   properly, you can select all the areas under this parent area and delete them
+   in bulk.</li>
+</ol>
+<h3 id="exporting-a-kml-file">Exporting a KML file<a class="headerlink" href="#exporting-a-kml-file" title="Permanent link">&para;</a></h3>
+<p>KML files can be exported from both areas and logs. Open the main Areas list, or
+any list of logs, select one or more, and click the "KML" button that appears at
+the bottom.</p>
+<h2 id="remember-to-save">Remember to save!<a class="headerlink" href="#remember-to-save" title="Permanent link">&para;</a></h2>
+<p>When you're done modifying your area, remember to click the Save button at the
+bottom of the page to save your changes.</p>
+<h2 id="organizing-areas-hierarchically">Organizing areas hierarchically<a class="headerlink" href="#organizing-areas-hierarchically" title="Permanent link">&para;</a></h2>
+<p>There are two ways to arrange areas hierarchically in farmOS:</p>
+<ol>
+<li>When you are editing an individual area, click "Relations" at the bottom and
+   use the "Parent" and "Weight" values to define the area's relationship to
+   other areas.</li>
+<li>Or, you can click and drag all your areas at once into a hierachal list. To
+   do this, click on the Areas link in the main menu, and in the right column
+   you will see a list of all your areas with a heading of "Hierachy (change)".
+   Click "(change)" to be brought to the hierarchy editor. Click and drag the
+   areas up and down, and left and right to arrange them how you want, and then
+   click "Save" at the bottom of the page.</li>
+</ol>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/area-hierarchy.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h2 id="generate-beds">Generate beds<a class="headerlink" href="#generate-beds" title="Permanent link">&para;</a></h2>
+<p>farmOS includes a special "Bed Generator" module that makes it easy to
+automatically generate a whole bunch of areas in bulk. The original goal was to
+make it easier to generate parallel beds within a field, but it may provide
+additional possibilities in the future.</p>
+<p>To use the bed generator to generate beds, follow these steps:</p>
+<ol>
+<li>Go to the "Areas" page (from the main menu) and click the "Bed generator"
+   tab.</li>
+<li>Select the field that the beds will be created within.</li>
+<li>Enter the number of beds that should be generated within the field.</li>
+<li>Set the orientation of the beds, and use the "Preview" button to see how
+   they look.</li>
+<li>When you are satisfied with the preview, click the "Generate" button to
+   generate the beds.</li>
+</ol>
+<p>Beds will be numbered and labeled using the parent area's name.</p>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/area-generator.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h2 id="use-the-snapping-grid">Use the Snapping Grid<a class="headerlink" href="#use-the-snapping-grid" title="Permanent link">&para;</a></h2>
+<p>FarmOS includes a "snapping grid" tool to aid in creating regular/aligned
+geometries. By default when drawing, the cursor will only snap to existing
+areas. However, the snapping grid adds a grid of evenly spaced points to which
+the cursor will snap preferentially.</p>
+<p><img alt="snapping_grid_demo" src="https://user-images.githubusercontent.com/30754460/88995756-5cb22300-d2a0-11ea-88a1-50edac1c0168.gif" /></p>
+<p>To activate the grid, click the '#' icon in the bottom left corner above the
+scale line, then select two points. The first point is the "origin" of the grid
+while the second point we will call a "rotation anchor" and describes how the
+grid should be rotated around the origin point.</p>
+<p>In addition to controlling the origin/rotation of the grid, its dimensions can
+be specified. To do so, hovor your mouse over the '#' icon then enter the <code>x</code> and
+<code>y</code> dimensions in the controls which appear.Since the grid can be rotated the
+dimensions are independent of the compass directions on the map. Instead, the <code>x</code>
+dimension represents the distances between the grid points on lines parallel with
+the line formed by the origin and rotation anchor points. Similarly, the <code>y</code> dimension
+represents distances perpendicular to that line.</p>
+<p><img alt="farmOS Snapping Grid dimensions screenshot" src="/img/snapping_grid_dimension_explanation.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p><p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS.org</span> content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />farmOS is a <a href="/community/trademark">registered trademark</a> of <a href="http://mstenta.net">Michael Stenta</a></p><p><a href="/donate">Donate</a> to help support the farmOS project.</p>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
